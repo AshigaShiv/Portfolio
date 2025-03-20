@@ -14,23 +14,25 @@
             background-color: #941919;
             color: #fff;
             text-align: center;
-            padding: 2rem 0;
-            position: relative; /* Add this */
+            padding: 2.5rem 0;
+            position: relative;
         }
 
-        .header-content h1 {
-            font-size: 2.5rem;
+        .header-content {
+            padding-left: 150px; /* Adjusted to avoid overlap with profile picture */
         }
 
-        /* Add styles for the round profile picture */
+        /* Profile Picture Styling */
         .profile-picture {
-            width: 100px; /* Adjust the size as needed */
-            height: 100px;
-            border-radius: 75%; /* Create a circular shape */
-            object-fit: cover; /* To ensure the image fills the circular area */
-            position: absolute; /* Add this */
-            top: 75px; /* Adjust top position as needed */
-            left: 75px; /* Adjust left position as needed */
+            width: 120px; /* Adjusted size */
+            height: 120px;
+            border-radius: 50%; /* Makes it circular */
+            object-fit: cover;
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%); /* Centers vertically */
+            border: 3px solid #fff; /* Optional: White border for a polished look */
         }
 
         nav {
@@ -71,7 +73,6 @@
             border-radius: 20px;
             display: inline-block;
             margin-top: 10px;
-            align-self: center;
         }
 
         .download-button:hover {
@@ -94,7 +95,7 @@
 <body>
     <header>
         <div class="header-content">
-            <!-- Add your profile picture 
+            <!-- Profile Picture (Now Visible) -->
             <img src="images/profile.jpg" alt="My Profile Picture" class="profile-picture">
             <h1>Ashiga.S.B.Shiv</h1>
             <p>Computer Applications</p>
@@ -108,26 +109,20 @@
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#resume">Resume</a></li>
-           
         </ul>
     </nav>
 
     <section id="about">
         <div class="section-content">
             <h2>About Me</h2>
-            <p>Highly motivated Computer Applications student with strong time management and teamwork skill with leadership experience.
-                Passionate about leveraging technology to solve real-world problems. 
-                Eager to contribute dynamic projects while continuously learning and growing in the tech industry.</p>
-
+            <p>Highly motivated Computer Applications student with strong time management and teamwork skills. Passionate about leveraging technology to solve real-world problems. Eager to contribute to dynamic projects while continuously learning and growing in the tech industry.</p>
         </div>
     </section>
 
     <section id="education">
         <div class="section-content">
             <h2>Education</h2>
-            <p>Deemed University of Madras - BCA</p>
-            
-            
+            <p>University of Madras - BCA</p>
         </div>
     </section>
 
@@ -150,24 +145,21 @@
         <div class="section-content">
             <h2>Projects</h2>
             <ul>
-                <li><a href="#">Introduction to StrategyConsulting Job Simulation-BCG</a></li>
-                <li><a href="#">Data Analytics and Visualization Job Simulation-Accenture</a></li>
-                <li><a href="#">Software Engineering Job Simulation-Accenture</a></li>
+                <li><a href="#">Introduction to Strategy Consulting Job Simulation - BCG</a></li>
+                <li><a href="#">Data Analytics and Visualization Job Simulation - Accenture</a></li>
+                <li><a href="#">Software Engineering Job Simulation - Accenture</a></li>
                 <li><a href="#">Data Science and Machine Learning</a></li> 
-                <!-- Add more project links here -->
             </ul>
         </div>
     </section>
 
     <section id="resume">
-    
         <div class="section-content">
             <center>
-            <h2>Resume</h2>
-            <a href="https://github.com/AshigaShiv/Portfolio/blob/main/Ashigaresume.pdf" target="_blank" class="download-button">Download CV</a>
-        </center>
+                <h2>Resume</h2>
+                <a href="https://github.com/AshigaShiv/Portfolio/blob/main/Ashigaresume.pdf" target="_blank" class="download-button">Download CV</a>
+            </center>
         </div>
-        
     </section>
 
     <footer>
@@ -175,14 +167,12 @@
     </footer>
 
     <script>
-        // Smooth scrolling to section when clicking on navigation links
+        // Smooth scrolling when clicking navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-
                 const targetId = this.getAttribute('href').substring(1);
                 const targetElement = document.getElementById(targetId);
-
                 if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop,
